@@ -1,9 +1,10 @@
 " Tasks plugin
 " Language:    Tasks
-" Maintainer:  Chris Rolfs
-" Last Change: Aug 7, 2015
-" Version:	   0.1
-" URL:         https://github.com/irrationalistic/vim-tasks
+" Maintainer:  Jorge Molero
+" Last Change: Now 6, 2017
+" Version:     0.2
+" URL:         https://github.com/jmolero/vim-tasks
+" Fork from:   https://github.com/irrationalistic/vim-tasks
 
 if exists("b:loaded_tasks")
   finish
@@ -104,12 +105,14 @@ endfunc
 function! GetProjects()
   " read from current line upwards, seeking all project matches
   " and adding them to a list
+  let l:lineIndent = indent(line('.'))
   let l:lineNr = line('.') - 1
   let l:results = []
   while l:lineNr > 0
     let l:match = matchstr(getline(l:lineNr), s:regProject)
-    if len(l:match)
+    if len(l:match) && indent(l:lineNr) < l:lineIndent
       call add(l:results, Trim(strpart(l:match, 0, len(l:match) - 1)))
+      let l:lineIndent = l:lineIndent - 2
       if indent(l:lineNr) == 0
         break
       endif
@@ -189,7 +192,7 @@ function! TasksArchive()
     let l:doneMatch = match(l:line, s:regDone)
     let l:cancelledMatch = match(l:line, s:regCancelled)
     let l:projectMatch = matchstr(l:line, s:regProject)
-    
+
     if l:doneMatch > -1 || l:cancelledMatch > -1
       call add(l:completedTasks, [l:lineNr, Trim(l:line)])
     endif
