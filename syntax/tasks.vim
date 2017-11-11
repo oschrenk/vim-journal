@@ -1,9 +1,10 @@
 " Tasks syntax
 " Language:    Tasks
-" Maintainer:  Chris Rolfs
-" Last Change: Aug 7, 2015
-" Version:	   0.1
-" URL:         https://github.com/irrationalistic/vim-tasks
+" Maintainer:  Jorge Molero
+" Last Change: Nov 6, 2017
+" Version:     0.3
+" URL:         https://github.com/jmolero/vim-tasks
+" Fork from:   https://github.com/irrationalistic/vim-tasks
 
 if version < 600
   syntax clear
@@ -36,14 +37,16 @@ exec 'syn match tAttribute "' . g:TasksAttributeMarker . '\w\+\(([^)]*)\)\=" con
 exec 'syn match tAttributeCompleted "' . g:TasksAttributeMarker . '\w\+\(([^)]*)\)\=" contained'
 
 syn region tTask start=/^\s*/ end=/$/ oneline keepend contains=tMarker,tAttribute
+syn match tTaskNote "^\(\(.*☐.*\)\@!.\)*$"
 exec 'syn region tTaskDone start="^[\s]*.*'.g:TasksAttributeMarker.'done" end=/$/ oneline contains=tMarkerComplete,tAttributeCompleted'
 exec 'syn region tTaskCancelled start="^[\s]*.*'.g:TasksAttributeMarker.'cancelled" end=/$/ oneline contains=tMarkerCancelled,tAttributeCompleted'
 syn match tProject "^\s*.*:$"
 
-hi def link tMarker Comment
-hi def link tMarkerComplete String
+hi def link tTaskNote Comment
+hi def link tMarker Normal
+hi def link tMarkerComplete Function
 hi def link tMarkerCancelled Statement
-hi def link tAttribute Special
+hi def link tAttribute CursorLineNr
 hi def link tAttributeCompleted Function
 hi def link tTaskDone Comment
 hi def link tTaskCancelled Comment
