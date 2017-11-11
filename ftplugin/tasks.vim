@@ -112,7 +112,7 @@ function! GetProjects()
     let l:match = matchstr(getline(l:lineNr), s:regProject)
     if len(l:match) && indent(l:lineNr) < l:lineIndent
       call add(l:results, Trim(strpart(l:match, 0, len(l:match) - 1)))
-      let l:lineIndent = l:lineIndent - 2
+      let l:lineIndent = l:lineIndent - &shiftwidth
       if indent(l:lineNr) == 0
         break
       endif
