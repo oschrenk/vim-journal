@@ -1,3 +1,3 @@
 " Tasks file detection
 
-autocmd BufNewFile,BufReadPost *.TODO,TODO,*.todo,*.todolist,*.taskpaper,*.tasks set filetype=tasks
+autocmd BufNewFile,BufReadPost *.md set filetype=tasks

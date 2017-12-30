@@ -2,7 +2,7 @@
 
 ![example](https://raw.githubusercontent.com/irrationalistic/atom-tasks/master/images/tasks_example.png)
 
-Special formatting for .todo and .taskpaper files. Allows you to easily add, complete, and archive your tasks.
+Enhances capabilities and formatting for `.md` files. Allows you to easily add, complete, and archive your tasks.
 
 Adjust the settings to match your ideal style. Change all the markers to '-' to match taskpaper.
 
