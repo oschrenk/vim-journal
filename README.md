@@ -14,43 +14,15 @@ This uses utf characters, so it is still valid as a plain text document.
 
 ## Installation
 
-### Vundle
-Place this in your `.vimrc`:
-
-    Plugin 'irrationalistic/vim-tasks'
-
-... then run the following in Vim:
-
-    :source %
-    :PluginInstall
-
-For Vundle version < 0.10.2, replace Plugin with Bundle above.
-
-### NeoBundle
-Place this in your `.vimrc`:
-
-    NeoBundle 'irrationalistic/vim-tasks'
-
-... then run the following in Vim:
-
-    :source %
-    :NeoBundleInstall
-
 ### VimPlug
 Place this in your `.vimrc`:
 
-    Plug 'irrationalistic/vim-tasks'
+    Plug 'oschrenk/vim-tasks'
 
 ... then run the following in Vim:
 
     :source %
     :PlugInstall
-
-### Pathogen
-Run the following in a terminal:
-
-    cd ~/.vim/bundle
-    git clone https://github.com/irrationalistic/vim-tasks
 
 ## Settings Defaults
 

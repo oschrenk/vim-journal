@@ -1,10 +1,4 @@
 " Tasks syntax
-" Language:    Tasks
-" Maintainer:  Jorge Molero
-" Last Change: Nov 6, 2017
-" Version:     0.3
-" URL:         https://github.com/jmolero/vim-tasks
-" Fork from:   https://github.com/irrationalistic/vim-tasks
 
 if version < 600
   syntax clear

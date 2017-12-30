@@ -1,10 +1,4 @@
 " Tasks plugin
-" Language:    Tasks
-" Maintainer:  Jorge Molero
-" Last Change: Now 6, 2017
-" Version:     0.2
-" URL:         https://github.com/jmolero/vim-tasks
-" Fork from:   https://github.com/irrationalistic/vim-tasks
 
 if exists("b:loaded_tasks")
   finish
