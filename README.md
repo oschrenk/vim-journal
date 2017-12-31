@@ -26,18 +26,14 @@ Place this in your `.vimrc`:
 
 ## Settings Defaults
 
-`let g:TasksMarkerBase = '☐'`
-
-`let g:TasksMarkerDone = '✔'`
-
-`let g:TasksMarkerCancelled = '✘'`
-
-`let g:TasksDateFormat = '%Y-%m-%d %H:%M'`
-
-`let g:TasksAttributeMarker = '@'`
-
-`let g:TasksArchiveSeparator = '＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿'`
-
+```
+let g:TasksMarkerBase = '☐'
+let g:TasksMarkerDone = '✔'
+let g:TasksMarkerCancelled = '✘'
+let g:TasksDateFormat = '%Y-%m-%d %H:%M'
+let g:TasksAttributeMarker = '@'
+let g:TasksArchiveSeparator = '＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿'
+```
 
 Run `:help Tasks` to view the full documentation.
 
