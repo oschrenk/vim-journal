@@ -61,6 +61,13 @@ of '@myAttribute(attribute value)' >
     let g:TasksAttributeMarker = '@'
 <
 
+                                                         *g:TasksProjectMarker*
+Default: :
+Specify the heading marker that signifies a new project. This token is being
+checked to be the end of the previous line.
+    let g:TasksProjectMarker = ':'
+
+
                                                             *g:TasksDateFormat*
 Default: %Y-%m-%d %H:%M
 Uses 'strftime' to define how timestamps will be set on completed or cancelled

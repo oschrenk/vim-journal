@@ -15,7 +15,7 @@ exec 'syn match tAttributeCompleted "' . g:TasksAttributeMarker . '\w\+\(([^)]*)
 
 exec 'syn region tTaskDone start="^[\s]*.*'.g:TasksAttributeMarker.'done" end=/$/ oneline contains=tMarkerComplete,tAttributeCompleted'
 exec 'syn region tTaskCancelled start="^[\s]*.*'.g:TasksAttributeMarker.'cancelled" end=/$/ oneline contains=tMarkerCancelled,tAttributeCompleted'
-syn match tProject "^\s*.*:$"
+exec 'syn match tProject "^\s*.*' . escape(g:TasksProjectMarker, b:regesc) . '$"'
 
 hi def link tMarker Normal
 hi def link tMarkerComplete Function

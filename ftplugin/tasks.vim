@@ -30,11 +30,12 @@ call s:initVariable('g:TasksMarkerCancelled', '✘')
 call s:initVariable('g:TasksDateFormat', '%Y-%m-%d %H:%M')
 call s:initVariable('g:TasksAttributeMarker', '@')
 call s:initVariable('g:TasksArchiveSeparator', '＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿')
+call s:initVariable('g:TasksProjectMarker', ':')
 
 let b:regesc = '[]()?.*@='
 
 " LOCALS
-let s:regProject = '^\s*.*:$'
+let s:regProject = '^\s*.*' . escape(g:TasksProjectMarker, b:regesc) . '$'
 let s:regMarker = join([escape(g:TasksMarkerBase, b:regesc), escape(g:TasksMarkerDone, b:regesc), escape(g:TasksMarkerCancelled, b:regesc)], '\|')
 let s:regDone = g:TasksAttributeMarker . 'done'
 let s:regCancelled = g:TasksAttributeMarker . 'cancelled'
@@ -102,10 +103,11 @@ function! GetProjects()
   let l:lineIndent = indent(line('.'))
   let l:lineNr = line('.') - 1
   let l:results = []
+  let l:projectMarkerLength = len(g:TasksProjectMarker)
   while l:lineNr > 0
     let l:match = matchstr(getline(l:lineNr), s:regProject)
     if len(l:match) && indent(l:lineNr) < l:lineIndent
-      call add(l:results, Trim(strpart(l:match, 0, len(l:match) - 1)))
+      call add(l:results, Trim(strpart(l:match, 0, len(l:match) - l:projectMarkerLength)))
       let l:lineIndent = l:lineIndent - &shiftwidth
       if indent(l:lineNr) == 0
         break

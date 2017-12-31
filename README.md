@@ -33,6 +33,7 @@ let g:TasksMarkerCancelled = '✘'
 let g:TasksDateFormat = '%Y-%m-%d %H:%M'
 let g:TasksAttributeMarker = '@'
 let g:TasksArchiveSeparator = '＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿'
+let g:TasksProjectMarker = ':'
 ```
 
 Run `:help Tasks` to view the full documentation.
