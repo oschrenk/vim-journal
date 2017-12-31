@@ -31,6 +31,7 @@ call s:initVariable('g:TasksDateFormat', '%Y-%m-%d %H:%M')
 call s:initVariable('g:TasksAttributeMarker', '@')
 call s:initVariable('g:TasksArchiveSeparator', '＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿')
 call s:initVariable('g:TasksProjectMarker', ':')
+call s:initVariable('g:TasksTagProject', 1)
 
 let b:regesc = '[]()?.*@='
 
@@ -142,7 +143,9 @@ function! TaskComplete()
       let l:projects = GetProjects()
       call SetLineMarker(g:TasksMarkerDone)
       call AddAttribute('done', strftime(s:dateFormat))
-      call AddAttribute('project', join(l:projects, ' / '))
+      if g:TasksTagProject
+        call AddAttribute('project', join(l:projects, ' / '))
+      endif
     endif
   endif
 endfunc

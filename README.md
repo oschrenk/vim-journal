@@ -34,6 +34,7 @@ let g:TasksDateFormat = '%Y-%m-%d %H:%M'
 let g:TasksAttributeMarker = '@'
 let g:TasksArchiveSeparator = '＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿'
 let g:TasksProjectMarker = ':'
+let g:TasksTagProject = 1
 ```
 
 Run `:help Tasks` to view the full documentation.
