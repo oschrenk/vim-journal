@@ -6,11 +6,11 @@ endif
 let b:loaded_tasks = 1
 
 " MAPPINGS
-nnoremap <buffer> <leader>n :call NewTask(1)<cr>
-nnoremap <buffer> <leader>N :call NewTask(-1)<cr>
-nnoremap <buffer> <leader>d :call TaskComplete()<cr>
-nnoremap <buffer> <leader>x :call TaskCancel()<cr>
-nnoremap <buffer> <leader>a :call TasksArchive()<cr>
+nnoremap <buffer> <c-n> :call NewTask(1)<cr>
+nnoremap <buffer> <c-N> :call NewTask(-1)<cr>
+nnoremap <buffer> <c-c> :call TaskComplete()<cr>
+nnoremap <buffer> <c-x> :call TaskCancel()<cr>
+nnoremap <buffer> <c-a> :call TasksArchive()<cr>
 
 " GLOBALS
 
