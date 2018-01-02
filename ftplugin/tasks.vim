@@ -32,6 +32,7 @@ call s:initVariable('g:TasksAttributeMarker', '@')
 call s:initVariable('g:TasksArchiveSeparator', '＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿')
 call s:initVariable('g:TasksProjectMarker', ':')
 call s:initVariable('g:TasksTagProject', 1)
+call s:initVariable('g:TasksScheduleMarker', '.schedule')
 
 let b:regesc = '[]()?.*@='
 
