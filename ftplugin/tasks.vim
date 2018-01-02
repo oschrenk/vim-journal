@@ -174,7 +174,9 @@ function! TaskCancel()
       let l:projects = GetProjects()
       call SetLineMarker(g:TasksMarkerCancelled)
       call AddAttribute('cancelled', strftime(s:dateFormat))
-      call AddAttribute('project', join(l:projects, ' / '))
+      if g:TasksTagProject
+        call AddAttribute('project', join(l:projects, ' / '))
+      endif
     endif
   endif
 endfunc
